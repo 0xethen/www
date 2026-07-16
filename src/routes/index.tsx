@@ -21,7 +21,7 @@ import WheelGestures from "embla-carousel-wheel-gestures";
 import { Card, CardContent } from "@/components/ui/card";
 import { HackathonFAQ } from "@/components/elements/HackathonFAQ";
 import { Scroller } from "@/components/ui/motion-primitives/scroller";
-import { type Sponsor, sponsors } from "@/lib/sponsors";
+import { type Sponsor, sponsors, statefarm } from "@/lib/sponsors";
 
 export const Route = createFileRoute("/")({
   component: RouteComponent,
@@ -214,7 +214,7 @@ function RouteComponent() {
           </div>
         </section>
         <section
-          className="text-center"
+          className="space-y-8 text-center"
           onFocusCapture={() => !isMobile && setShowGrid(true)}
           onBlurCapture={(e) => {
             if (!e.currentTarget.contains(e.relatedTarget as Node | null)) {
@@ -222,27 +222,31 @@ function RouteComponent() {
             }
           }}
         >
-          <h1 className="text-2xl sm:text-3xl md:text-4xl mb-8">Sponsors</h1>
+          <h1 className="text-2xl sm:text-3xl md:text-4xl">Sponsors</h1>
 
-          {showGrid ? (
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 justify-items-center">
-              {sponsors.map((sponsor) => (
-                <SponsorLogo key={sponsor.title} sponsor={sponsor} />
-              ))}
-            </div>
-          ) : (
-            <Scroller
-              className="mx-auto max-w-4xl w-full mask-x-from-95%"
-              speedOnHover={0.5}
-              gap={24}
-            >
-              {sponsors.map((sponsor) => (
-                <SponsorLogo key={sponsor.title} sponsor={sponsor} />
-              ))}
-            </Scroller>
-          )}
+          <div className="space-y-4">
+            <SponsorLogo classNames={{ parent: "w-auto", image: "w-70" }} sponsor={statefarm} />
 
-          <div className="mt-8">
+            {showGrid ? (
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 justify-items-center">
+                {sponsors.map((sponsor) => (
+                  <SponsorLogo key={sponsor.title} sponsor={sponsor} />
+                ))}
+              </div>
+            ) : (
+              <Scroller
+                className="mx-auto max-w-4xl w-full mask-x-from-95%"
+                speedOnHover={0.5}
+                gap={24}
+              >
+                {sponsors.map((sponsor) => (
+                  <SponsorLogo key={sponsor.title} sponsor={sponsor} />
+                ))}
+              </Scroller>
+            )}
+          </div>
+
+          <div>
             <span className="text-muted-foreground/50">
               Prizes brought to you by{" "}
               <img
@@ -273,16 +277,29 @@ function RouteComponent() {
   );
 }
 
-const SponsorLogo = ({ sponsor }: { sponsor: Sponsor }) => (
+const SponsorLogo = ({
+  sponsor,
+  classNames,
+}: {
+  sponsor: Sponsor;
+  classNames?: { parent?: string; image?: string };
+}) => (
   <ExtLink
     href={sponsor.href}
     title={sponsor.title}
-    className="group flex items-center justify-center rounded-lg p-3 transition focus-visible:ring-2 focus-visible:ring-ring"
+    className={cn(
+      "group flex items-center justify-center rounded-lg p-3 transition focus-visible:ring-2 focus-visible:ring-ring",
+      classNames?.parent,
+    )}
+    unstyled
   >
     <img
       src={`/assets/images/sponsors/${sponsor.src}`}
       alt={sponsor.title}
-      className="max-h-12 max-w-full object-contain transition grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-100 group-focus-visible:grayscale-0 group-focus-visible:opacity-100 select-none"
+      className={cn(
+        "max-h-12 max-w-full object-contain transition grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-100 group-focus-visible:grayscale-0 group-focus-visible:opacity-100 select-none",
+        classNames?.image,
+      )}
     />
   </ExtLink>
 );
