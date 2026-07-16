@@ -1,7 +1,7 @@
-import { createFileRoute, redirect } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/_aliases/about-us")({
   beforeLoad: () => {
-    throw redirect({ to: "/about" });
+    throw Route.redirect({ to: "/about" });
   },
 });

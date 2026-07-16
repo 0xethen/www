@@ -44,6 +44,7 @@ const config = defineConfig({
     }),
     viteReact(),
   ],
+  build: { outDir: "dist" },
 });
 
 export default config;

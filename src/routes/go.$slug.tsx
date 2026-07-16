@@ -1,4 +1,4 @@
-import { createFileRoute, notFound, redirect } from "@tanstack/react-router";
+import { createFileRoute, notFound } from "@tanstack/react-router";
 import { brandInfo } from "@/lib/meta";
 
 export const goRedirects: Record<string, string> = {
@@ -26,7 +26,7 @@ export const Route = createFileRoute("/go/$slug")({
     const { slug } = params;
 
     if (goRedirects[slug]) {
-      return redirect(buildRedirectOpts(goRedirects[slug]));
+      return Route.redirect(buildRedirectOpts(goRedirects[slug]));
     }
 
     throw notFound();
