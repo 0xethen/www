@@ -76,8 +76,8 @@ function RouteComponent() {
 
       <div className="bg-blue-500 "></div>
 
-      <div className="min-h-[75dvh] md:min-h-safe-dvh bg-hg-black bg-[url('/assets/images/hero/bgtexture01.svg')] text-white">
-        <div className="min-h-[75dvh] md:min-h-safe-dvh px-12 flex flex-row items-center justify-between gap-12 animate-in fade-in slide-in-from-bottom-5 animation-duration-800 animation-delay-50 fill-mode-backwards">
+      <div className="min-h-safe-dvh bg-hg-black bg-[url('/assets/images/hero/bgtexture01.svg')] text-white">
+        <div className="min-h-safe-dvh px-8 md:px-12 flex flex-row items-center justify-between gap-12 animate-in fade-in slide-in-from-bottom-5 animation-duration-800 animation-delay-50 fill-mode-backwards">
           <div className="flex flex-col justify-center gap-4">
             <ColorBadge
               render={
@@ -88,16 +88,17 @@ function RouteComponent() {
                 />
               }
             >
-              NEW: Introducing Summer Workshops with Peach State Hacks <RiArrowRightDoubleLine />
+              NEW: Introducing Summer Workshops {!isMobile && " with Peach State Hacks "}
+              <RiArrowRightDoubleLine />
             </ColorBadge>
-            <h1 className="text-5xl md:text-6xl max-w-2xl font-mono leading-14 md:leading-17 select-none">
+            <h1 className="text-3xl sm:text-5xl md:text-6xl max-w-2xl font-mono leading-10 sm:leading-14 md:leading-17 select-none">
               Atlanta's premier{" "}
               <span className="text-primary-light">
                 <TextScramble>computer science</TextScramble>
               </span>{" "}
               organization
             </h1>
-            <p className="text-xl md:text-2xl text-white/80">
+            <p className="text-lg sm:text-xl md:text-2xl text-white/80">
               {eventInfo.hackathon.name} is{" "}
               {eventInfo.hackathon.endDate.getTime() < Date.now() ? (
                 <>over. Thank you, everyone!</>
@@ -171,7 +172,7 @@ function RouteComponent() {
             </button>
           </Carousel>
         </div>
-        <div className="absolute bottom-0 left-1/2 flex justify-center pb-8">
+        <div className="absolute bottom-0 left-[49dvw] flex justify-center pb-8">
           <Magnetic intensity={0.4}>
             <Button
               className={cn(
@@ -179,7 +180,7 @@ function RouteComponent() {
                 isScrolled ? "animate-out fade-out hidden" : "animate-in fade-in inline-flex",
               )}
               variant="glass"
-              size="icon-lg"
+              size={isMobile ? "icon" : "icon-lg"}
               onClick={() =>
                 document.getElementById("subhero")?.scrollIntoView({ behavior: "smooth" })
               }
@@ -261,16 +262,16 @@ function RouteComponent() {
         </section>
       </main>
       <footer className="bg-hg-black text-white p-4 md:p-6">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-2">
           <span className="text-sm text-white/50">
             &copy; {new Date().getFullYear()} HackGwinnett. All rights reserved.
           </span>
           <div className="flex flex-row gap-4">
-            <ExtLink href="/privacy-policy" className="text-sm text-white/50 hover:text-white">
-              Privacy Policy
-            </ExtLink>
-            <ExtLink href="/terms-of-service" className="text-sm text-white/50 hover:text-white">
-              Terms of Service
+            <ExtLink
+              href="https://ethen.app/marketing-sites/privacy"
+              className="text-sm text-white/50 hover:text-white"
+            >
+              Cookies / Privacy Policy
             </ExtLink>
           </div>
         </div>

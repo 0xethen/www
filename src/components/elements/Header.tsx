@@ -27,6 +27,7 @@ import {
 } from "@/components/ui/ethendotapp/drawer";
 import { toolInfo } from "@/routes/tools/-shared";
 import { Badge } from "../ui/badge";
+import { Separator } from "../ui/separator";
 
 interface NavLinkProps {
   icon?: React.ReactNode;
@@ -49,6 +50,11 @@ const data: NavItem[] = [
     title: "About Us",
     description: "Learn more about HackGwinnett, our team, and our mission.",
     href: "/about",
+  },
+  {
+    title: "Posts",
+    description: "News, updates, and announcements from HackGwinnett and the team.",
+    href: "/posts",
   },
   {
     title: "Programs",
@@ -242,7 +248,7 @@ export function Header({
               classNames?.cta?.link,
             )}
             variant="ghost"
-            size={isMobile ? "sm" : "icon-sm"}
+            size="icon-sm"
             nativeButton={false}
           >
             <RiInstagramFill />
@@ -257,7 +263,7 @@ export function Header({
               classNames?.cta?.link,
             )}
             variant="ghost"
-            size={isMobile ? "sm" : "icon-sm"}
+            size="icon-sm"
             nativeButton={false}
           >
             <RiDiscordFill />
@@ -272,7 +278,7 @@ export function Header({
                     classNames?.cta?.link,
                   )}
                   variant="ghost"
-                  size={isMobile ? "sm" : "icon-sm"}
+                  size="icon-sm"
                 />
               }
             >
@@ -295,6 +301,8 @@ export function Header({
                 </DrawerDescription>
               </DrawerHeader>
 
+              <Separator />
+
               <div className="flex-1 overflow-y-auto scroll-fade p-4">
                 <nav className="flex flex-col gap-6">
                   {data.map((item) => (
@@ -306,17 +314,17 @@ export function Header({
                           <h4 className="border-b pb-2 text-lg uppercase font-thin font-brand">
                             {item.title}
                           </h4>
-                          <div className="p-1 flex flex-col gap-2 bg-accent/50">
-                            {item.list.items.map((subItem) => (
-                              <MobileLink key={`${subItem.title}-${subItem.href}`} item={subItem} />
-                            ))}
-                          </div>
+                          {item.list.items.map((subItem) => (
+                            <MobileLink key={`${subItem.title}-${subItem.href}`} item={subItem} />
+                          ))}
                         </div>
                       )}
                     </div>
                   ))}
                 </nav>
               </div>
+
+              <Separator />
 
               <DrawerFooter>
                 <Button

@@ -77,7 +77,7 @@ function RouteComponent() {
 
       <div className="mx-auto max-w-7xl">
         <div className="my-8" />
-        <main className="p-4 flex flex-col md:flex-row justify-between gap-8">
+        <main className="p-4 flex flex-col lg:flex-row justify-between gap-8">
           {content ? (
             <div
               className="typeset max-w-none space-y-2"
@@ -87,7 +87,7 @@ function RouteComponent() {
             "not found"
           )}
 
-          <div className="min-w-md">
+          <div className="lg:min-w-md">
             <ContactForm />
           </div>
         </main>
@@ -169,7 +169,8 @@ function ContactForm() {
     },
   });
 
-  const { isMobileDevice } = useMobile();
+  const { breakpoint, isMobileDevice } = useMobile();
+  const isMobile = breakpoint === "sm";
 
   const copyEmail = () => {
     if (isMobileDevice && !confirm("Copy email address to clipboard?")) return;
@@ -189,7 +190,7 @@ function ContactForm() {
         await form.handleSubmit();
       }}
     >
-      <Card className="w-full sm:max-w-md">
+      <Card size={isMobile ? "sm" : "default"} className="max-w-full lg:max-w-md">
         <CardHeader>
           <CardTitle>Contact Us</CardTitle>
           <CardDescription>Get in touch with the HackGwinnett team via email.</CardDescription>

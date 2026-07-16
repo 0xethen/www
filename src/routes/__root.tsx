@@ -42,6 +42,10 @@ export const Route: RootRoute<Register> = createRootRoute({
         content: "#01150a",
       },
       {
+        name: "apple-mobile-web-app-status-bar-style",
+        content: "black-translucent",
+      },
+      {
         title: buildTitle(ctx.matches),
       },
     ],
