@@ -1,0 +1,10 @@
+import { createFileRoute } from "@tanstack/react-router";
+
+export const Route = createFileRoute("/tools/bogey")({
+  component: RouteComponent,
+  staticData: { config: { title: { text: "Bogey 2" } } },
+});
+
+function RouteComponent() {
+  return <div>Hello "/tools/bogey"!</div>;
+}
