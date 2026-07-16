@@ -35,10 +35,13 @@ const config = defineConfig({
   resolve: { tsconfigPaths: true },
   plugins: [
     devtools(),
-    nitro({ rolldownConfig: { external: [/^@sentry\//] } }),
+    nitro({ static: true, rolldownConfig: { external: [/^@sentry\//] } }),
     contentCollections(),
     tailwindcss(),
-    tanstackStart({ spa: { enabled: true, prerender: { outputPath: "/index.html" } } }),
+    tanstackStart({
+      spa: { enabled: true, prerender: { outputPath: "/index.html", crawlLinks: true } },
+      prerender: { failOnError: false },
+    }),
     viteReact(),
   ],
 });
