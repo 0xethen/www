@@ -77,20 +77,18 @@ function RootDocument({ children }: { children: React.ReactNode }) {
   };
 
   return (
-    <html
-      lang="en"
-      data-header={getHasLayoutOffset()}
-      className={cn(
-        [...matches].reverse().find((m) => m.staticData?.config?.classNames?.root)?.staticData
-          .config?.classNames?.root,
-        "overscroll-x-none",
-        getHeaderVisible() && "overscroll-y-none",
-      )}
-    >
+    <html lang="en" data-header={getHasLayoutOffset()}>
       <head>
         <HeadContent />
       </head>
-      <body>
+      <body
+        className={cn(
+          [...matches].reverse().find((m) => m.staticData?.config?.classNames?.root)?.staticData
+            .config?.classNames?.root,
+          "overscroll-x-none",
+          getHeaderVisible() && "overscroll-y-none",
+        )}
+      >
         {getHeaderVisible() && (
           <Header
             className={matches[matches.length - 1].staticData.header?.className}

@@ -114,7 +114,7 @@ function RouteComponent() {
             <div className="flex flex-row gap-4">
               <Magnetic intensity={0.4}>
                 <Button
-                  render={<Link to="/go/$slug" params={{ slug: "register" }} unstyled disabled />}
+                  render={<Link to="/go/$slug" params={{ slug: "register" }} unstyled />}
                   className="cursor-none striped-hg-green active:scale-98"
                   variant="hero"
                   size={isMobile ? "sm" : "lg"}
