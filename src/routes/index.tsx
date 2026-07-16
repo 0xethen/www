@@ -172,19 +172,21 @@ function RouteComponent() {
           </Carousel>
         </div>
         <div className="absolute bottom-0 left-1/2 flex justify-center pb-8">
-          <Button
-            className={cn(
-              "transition-opacity mx-auto",
-              isScrolled ? "animate-out fade-out hidden" : "animate-in fade-in inline-flex",
-            )}
-            variant="glass"
-            size="icon-lg"
-            onClick={() =>
-              document.getElementById("subhero")?.scrollIntoView({ behavior: "smooth" })
-            }
-          >
-            <RiArrowDownBoxLine className="size-7" />
-          </Button>
+          <Magnetic intensity={0.4}>
+            <Button
+              className={cn(
+                "transition-opacity mx-auto cursor-none",
+                isScrolled ? "animate-out fade-out hidden" : "animate-in fade-in inline-flex",
+              )}
+              variant="glass"
+              size="icon-lg"
+              onClick={() =>
+                document.getElementById("subhero")?.scrollIntoView({ behavior: "smooth" })
+              }
+            >
+              <RiArrowDownBoxLine className="size-7" />
+            </Button>
+          </Magnetic>
         </div>
       </div>
       <div id="subhero" className="bg-hg-green striped-hg-green-alt/20 h-20" />
