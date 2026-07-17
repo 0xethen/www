@@ -17,6 +17,7 @@ const router = createRouter({
   defaultPreloadStaleTime: 0,
   defaultErrorComponent: ErrorBoundary,
   defaultNotFoundComponent: NotFound,
+  basepath: "www",
 });
 
 // Register the router instance for type safety
