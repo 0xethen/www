@@ -13,6 +13,16 @@ jobs:
           node-version: "24"
           cache: true
 
+      - name: Run vp for 3 seconds
+        shell: bash
+        run: |
+          set -euo pipefail
+          vp run &
+          PID=$!
+          sleep 3
+          kill "$PID" || true
+          wait "$PID" || true
+
       - name: install deps
         run: vp install
 

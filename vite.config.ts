@@ -8,7 +8,7 @@ import babel from "@rolldown/plugin-babel";
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: "/www/", // for github pages
+  // base: "/www/", // for github pages
   staged: { "*": "vp check --fix" },
   fmt: {},
   lint: {
