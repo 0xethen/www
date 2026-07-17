@@ -105,7 +105,7 @@ const data: NavItem[] = [
   },
   {
     title: "Archive",
-    className: "hidden md:flex",
+    className: "hidden lg:flex",
     list: {
       className:
         "grid grid-flow-col gap-2 grid-rows-3 md:grid-cols-2 w-84 [&_.nav-label]:font-brand",
@@ -167,7 +167,7 @@ export function Header({
 
         <div
           className={cn(
-            "hidden lg:flex flex-1 justify-center",
+            "hidden md:flex flex-1 justify-center",
             classNames?.navigationMenu?.global,
             classNames?.navigationMenu?.container,
           )}

@@ -4,6 +4,14 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { Separator } from "@/components/ui/separator";
 import { createFileRoute } from "@tanstack/react-router";
 import { posts } from "cms/posts";
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
 
 export const Route = createFileRoute("/posts/tag/$tag")({
   loader: async ({ params }) => {
@@ -30,8 +38,25 @@ function RouteComponent() {
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
-      <div>
-        <h3>Posts tagged #{tag}</h3>
+      <div className="space-y-4">
+        <Breadcrumb>
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbLink render={<Link to="/" unstyled />}>Home</BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbLink render={<Link to="/posts" unstyled />}>Posts</BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbPage>#{tag}</BreadcrumbPage>
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
+        <h3>
+          <span className="font-normal">Posts tagged</span> #{tag}
+        </h3>
       </div>
       <ScrollArea className="h-[60vh]">
         <div className="grid gap-4">

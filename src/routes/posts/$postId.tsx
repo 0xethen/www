@@ -73,7 +73,7 @@ function RouteComponent() {
 
   return (
     <article className="container mx-auto px-4 py-8 max-w-4xl">
-      <div className="space-y-6">
+      <div className="space-y-4">
         <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbItem>
@@ -99,7 +99,7 @@ function RouteComponent() {
         ) : (
           <div />
         )}
-        <h1 className="font-medium text-shadow-sm text-shadow-hg-black/15">{post.title}</h1>
+        <h2 className="font-medium text-shadow-sm text-shadow-hg-black/15">{post.title}</h2>
         <p className="text-xl text-muted-foreground">{post.summary}</p>
         <div className="flex items-center gap-4">
           <Dialog>
@@ -137,7 +137,9 @@ function RouteComponent() {
         {post.tags && (
           <div className="mt-2 flex flex-wrap gap-2">
             {post.tags.map((tag) => (
-              <Badge key={tag}>{tag}</Badge>
+              <Badge render={<Link to="/posts/tag/$tag" params={{ tag }} unstyled />} key={tag}>
+                {tag}
+              </Badge>
             ))}
           </div>
         )}
