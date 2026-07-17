@@ -8,6 +8,8 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
+
       - uses: voidzero-dev/setup-vp@v1
         with:
           node-version: "24"
@@ -17,7 +19,7 @@ jobs:
         run: vp install
 
       - name: build
-        run: pnpm run build
+        run: vp build
 
       - name: create 404.html
         run: cp dist/index.html dist/404.html
