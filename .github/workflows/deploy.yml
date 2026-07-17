@@ -25,7 +25,7 @@ jobs:
         id: deployment
         uses: actions/upload-pages-artifact@v5
         with:
-          path: build_outputs_folder/
+          path: dist/
 
   deploy:
     runs-on: ubuntu-latest
