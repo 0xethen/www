@@ -8,446 +8,465 @@
 // You should NOT make any changes in this file as it will be overwritten.
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
-import { Route as rootRouteImport } from './routes/__root'
-import { Route as ThecakeisalieRouteImport } from './routes/thecakeisalie'
-import { Route as DeveloperRouteImport } from './routes/developer'
-import { Route as ToolsRouteRouteImport } from './routes/tools/route'
-import { Route as PostsRouteRouteImport } from './routes/posts/route'
-import { Route as IndexRouteImport } from './routes/index'
-import { Route as ToolsIndexRouteImport } from './routes/tools/index'
-import { Route as PostsIndexRouteImport } from './routes/posts/index'
-import { Route as AboutIndexRouteImport } from './routes/about/index'
-import { Route as ToolsUnderConstructionRouteImport } from './routes/tools/under-construction'
-import { Route as ToolsLegacyRouteImport } from './routes/tools/legacy'
-import { Route as ToolsBogeyRouteImport } from './routes/tools/bogey'
-import { Route as ToolsBirdieRouteImport } from './routes/tools/birdie'
-import { Route as ProgramsProgramRouteImport } from './routes/programs/$program'
-import { Route as PostsAtChar123authorChar125RouteImport } from './routes/posts/@{$author}'
-import { Route as PostsPostIdRouteImport } from './routes/posts/$postId'
-import { Route as GoSlugRouteImport } from './routes/go.$slug'
-import { Route as EdaReportRouteImport } from './routes/eda/report'
-import { Route as AliasesTeamRouteImport } from './routes/_aliases/team'
-import { Route as AliasesContactRouteImport } from './routes/_aliases/contact'
-import { Route as AliasesAboutUsRouteImport } from './routes/_aliases/about-us'
-import { Route as PostsTagTagRouteImport } from './routes/posts/tag.$tag'
+import { Route as rootRouteImport } from "./routes/__root";
+import { Route as ThecakeisalieRouteImport } from "./routes/thecakeisalie";
+import { Route as SignatureRouteImport } from "./routes/signature";
+import { Route as DeveloperRouteImport } from "./routes/developer";
+import { Route as ToolsRouteRouteImport } from "./routes/tools/route";
+import { Route as PostsRouteRouteImport } from "./routes/posts/route";
+import { Route as IndexRouteImport } from "./routes/index";
+import { Route as ToolsIndexRouteImport } from "./routes/tools/index";
+import { Route as PostsIndexRouteImport } from "./routes/posts/index";
+import { Route as AboutIndexRouteImport } from "./routes/about/index";
+import { Route as ToolsUnderConstructionRouteImport } from "./routes/tools/under-construction";
+import { Route as ToolsLegacyRouteImport } from "./routes/tools/legacy";
+import { Route as ToolsBogeyRouteImport } from "./routes/tools/bogey";
+import { Route as ToolsBirdieRouteImport } from "./routes/tools/birdie";
+import { Route as ProgramsProgramRouteImport } from "./routes/programs/$program";
+import { Route as PostsAtChar123authorChar125RouteImport } from "./routes/posts/@{$author}";
+import { Route as PostsPostIdRouteImport } from "./routes/posts/$postId";
+import { Route as GoSlugRouteImport } from "./routes/go.$slug";
+import { Route as EdaReportRouteImport } from "./routes/eda/report";
+import { Route as AliasesTeamRouteImport } from "./routes/_aliases/team";
+import { Route as AliasesContactRouteImport } from "./routes/_aliases/contact";
+import { Route as AliasesAboutUsRouteImport } from "./routes/_aliases/about-us";
+import { Route as PostsTagTagRouteImport } from "./routes/posts/tag.$tag";
 
 const ThecakeisalieRoute = ThecakeisalieRouteImport.update({
-  id: '/thecakeisalie',
-  path: '/thecakeisalie',
+  id: "/thecakeisalie",
+  path: "/thecakeisalie",
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any);
+const SignatureRoute = SignatureRouteImport.update({
+  id: "/signature",
+  path: "/signature",
+  getParentRoute: () => rootRouteImport,
+} as any);
 const DeveloperRoute = DeveloperRouteImport.update({
-  id: '/developer',
-  path: '/developer',
+  id: "/developer",
+  path: "/developer",
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any);
 const ToolsRouteRoute = ToolsRouteRouteImport.update({
-  id: '/tools',
-  path: '/tools',
+  id: "/tools",
+  path: "/tools",
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any);
 const PostsRouteRoute = PostsRouteRouteImport.update({
-  id: '/posts',
-  path: '/posts',
+  id: "/posts",
+  path: "/posts",
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any);
 const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+  id: "/",
+  path: "/",
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any);
 const ToolsIndexRoute = ToolsIndexRouteImport.update({
-  id: '/',
-  path: '/',
+  id: "/",
+  path: "/",
   getParentRoute: () => ToolsRouteRoute,
-} as any)
+} as any);
 const PostsIndexRoute = PostsIndexRouteImport.update({
-  id: '/',
-  path: '/',
+  id: "/",
+  path: "/",
   getParentRoute: () => PostsRouteRoute,
-} as any)
+} as any);
 const AboutIndexRoute = AboutIndexRouteImport.update({
-  id: '/about/',
-  path: '/about/',
+  id: "/about/",
+  path: "/about/",
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any);
 const ToolsUnderConstructionRoute = ToolsUnderConstructionRouteImport.update({
-  id: '/under-construction',
-  path: '/under-construction',
+  id: "/under-construction",
+  path: "/under-construction",
   getParentRoute: () => ToolsRouteRoute,
-} as any)
+} as any);
 const ToolsLegacyRoute = ToolsLegacyRouteImport.update({
-  id: '/legacy',
-  path: '/legacy',
+  id: "/legacy",
+  path: "/legacy",
   getParentRoute: () => ToolsRouteRoute,
-} as any)
+} as any);
 const ToolsBogeyRoute = ToolsBogeyRouteImport.update({
-  id: '/bogey',
-  path: '/bogey',
+  id: "/bogey",
+  path: "/bogey",
   getParentRoute: () => ToolsRouteRoute,
-} as any)
+} as any);
 const ToolsBirdieRoute = ToolsBirdieRouteImport.update({
-  id: '/birdie',
-  path: '/birdie',
+  id: "/birdie",
+  path: "/birdie",
   getParentRoute: () => ToolsRouteRoute,
-} as any)
+} as any);
 const ProgramsProgramRoute = ProgramsProgramRouteImport.update({
-  id: '/programs/$program',
-  path: '/programs/$program',
+  id: "/programs/$program",
+  path: "/programs/$program",
   getParentRoute: () => rootRouteImport,
-} as any)
-const PostsAtChar123authorChar125Route =
-  PostsAtChar123authorChar125RouteImport.update({
-    id: '/@{$author}',
-    path: '/@{$author}',
-    getParentRoute: () => PostsRouteRoute,
-  } as any)
+} as any);
+const PostsAtChar123authorChar125Route = PostsAtChar123authorChar125RouteImport.update({
+  id: "/@{$author}",
+  path: "/@{$author}",
+  getParentRoute: () => PostsRouteRoute,
+} as any);
 const PostsPostIdRoute = PostsPostIdRouteImport.update({
-  id: '/$postId',
-  path: '/$postId',
+  id: "/$postId",
+  path: "/$postId",
   getParentRoute: () => PostsRouteRoute,
-} as any)
+} as any);
 const GoSlugRoute = GoSlugRouteImport.update({
-  id: '/go/$slug',
-  path: '/go/$slug',
+  id: "/go/$slug",
+  path: "/go/$slug",
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any);
 const EdaReportRoute = EdaReportRouteImport.update({
-  id: '/eda/report',
-  path: '/eda/report',
+  id: "/eda/report",
+  path: "/eda/report",
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any);
 const AliasesTeamRoute = AliasesTeamRouteImport.update({
-  id: '/_aliases/team',
-  path: '/team',
+  id: "/_aliases/team",
+  path: "/team",
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any);
 const AliasesContactRoute = AliasesContactRouteImport.update({
-  id: '/_aliases/contact',
-  path: '/contact',
+  id: "/_aliases/contact",
+  path: "/contact",
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any);
 const AliasesAboutUsRoute = AliasesAboutUsRouteImport.update({
-  id: '/_aliases/about-us',
-  path: '/about-us',
+  id: "/_aliases/about-us",
+  path: "/about-us",
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any);
 const PostsTagTagRoute = PostsTagTagRouteImport.update({
-  id: '/tag/$tag',
-  path: '/tag/$tag',
+  id: "/tag/$tag",
+  path: "/tag/$tag",
   getParentRoute: () => PostsRouteRoute,
-} as any)
+} as any);
 
 export interface FileRoutesByFullPath {
-  '/': typeof IndexRoute
-  '/posts': typeof PostsRouteRouteWithChildren
-  '/tools': typeof ToolsRouteRouteWithChildren
-  '/developer': typeof DeveloperRoute
-  '/thecakeisalie': typeof ThecakeisalieRoute
-  '/about-us': typeof AliasesAboutUsRoute
-  '/contact': typeof AliasesContactRoute
-  '/team': typeof AliasesTeamRoute
-  '/eda/report': typeof EdaReportRoute
-  '/go/$slug': typeof GoSlugRoute
-  '/posts/$postId': typeof PostsPostIdRoute
-  '/posts/@{$author}': typeof PostsAtChar123authorChar125Route
-  '/programs/$program': typeof ProgramsProgramRoute
-  '/tools/birdie': typeof ToolsBirdieRoute
-  '/tools/bogey': typeof ToolsBogeyRoute
-  '/tools/legacy': typeof ToolsLegacyRoute
-  '/tools/under-construction': typeof ToolsUnderConstructionRoute
-  '/about/': typeof AboutIndexRoute
-  '/posts/': typeof PostsIndexRoute
-  '/tools/': typeof ToolsIndexRoute
-  '/posts/tag/$tag': typeof PostsTagTagRoute
+  "/": typeof IndexRoute;
+  "/posts": typeof PostsRouteRouteWithChildren;
+  "/tools": typeof ToolsRouteRouteWithChildren;
+  "/developer": typeof DeveloperRoute;
+  "/signature": typeof SignatureRoute;
+  "/thecakeisalie": typeof ThecakeisalieRoute;
+  "/about-us": typeof AliasesAboutUsRoute;
+  "/contact": typeof AliasesContactRoute;
+  "/team": typeof AliasesTeamRoute;
+  "/eda/report": typeof EdaReportRoute;
+  "/go/$slug": typeof GoSlugRoute;
+  "/posts/$postId": typeof PostsPostIdRoute;
+  "/posts/@{$author}": typeof PostsAtChar123authorChar125Route;
+  "/programs/$program": typeof ProgramsProgramRoute;
+  "/tools/birdie": typeof ToolsBirdieRoute;
+  "/tools/bogey": typeof ToolsBogeyRoute;
+  "/tools/legacy": typeof ToolsLegacyRoute;
+  "/tools/under-construction": typeof ToolsUnderConstructionRoute;
+  "/about/": typeof AboutIndexRoute;
+  "/posts/": typeof PostsIndexRoute;
+  "/tools/": typeof ToolsIndexRoute;
+  "/posts/tag/$tag": typeof PostsTagTagRoute;
 }
 export interface FileRoutesByTo {
-  '/': typeof IndexRoute
-  '/developer': typeof DeveloperRoute
-  '/thecakeisalie': typeof ThecakeisalieRoute
-  '/about-us': typeof AliasesAboutUsRoute
-  '/contact': typeof AliasesContactRoute
-  '/team': typeof AliasesTeamRoute
-  '/eda/report': typeof EdaReportRoute
-  '/go/$slug': typeof GoSlugRoute
-  '/posts/$postId': typeof PostsPostIdRoute
-  '/posts/@{$author}': typeof PostsAtChar123authorChar125Route
-  '/programs/$program': typeof ProgramsProgramRoute
-  '/tools/birdie': typeof ToolsBirdieRoute
-  '/tools/bogey': typeof ToolsBogeyRoute
-  '/tools/legacy': typeof ToolsLegacyRoute
-  '/tools/under-construction': typeof ToolsUnderConstructionRoute
-  '/about': typeof AboutIndexRoute
-  '/posts': typeof PostsIndexRoute
-  '/tools': typeof ToolsIndexRoute
-  '/posts/tag/$tag': typeof PostsTagTagRoute
+  "/": typeof IndexRoute;
+  "/developer": typeof DeveloperRoute;
+  "/signature": typeof SignatureRoute;
+  "/thecakeisalie": typeof ThecakeisalieRoute;
+  "/about-us": typeof AliasesAboutUsRoute;
+  "/contact": typeof AliasesContactRoute;
+  "/team": typeof AliasesTeamRoute;
+  "/eda/report": typeof EdaReportRoute;
+  "/go/$slug": typeof GoSlugRoute;
+  "/posts/$postId": typeof PostsPostIdRoute;
+  "/posts/@{$author}": typeof PostsAtChar123authorChar125Route;
+  "/programs/$program": typeof ProgramsProgramRoute;
+  "/tools/birdie": typeof ToolsBirdieRoute;
+  "/tools/bogey": typeof ToolsBogeyRoute;
+  "/tools/legacy": typeof ToolsLegacyRoute;
+  "/tools/under-construction": typeof ToolsUnderConstructionRoute;
+  "/about": typeof AboutIndexRoute;
+  "/posts": typeof PostsIndexRoute;
+  "/tools": typeof ToolsIndexRoute;
+  "/posts/tag/$tag": typeof PostsTagTagRoute;
 }
 export interface FileRoutesById {
-  __root__: typeof rootRouteImport
-  '/': typeof IndexRoute
-  '/posts': typeof PostsRouteRouteWithChildren
-  '/tools': typeof ToolsRouteRouteWithChildren
-  '/developer': typeof DeveloperRoute
-  '/thecakeisalie': typeof ThecakeisalieRoute
-  '/_aliases/about-us': typeof AliasesAboutUsRoute
-  '/_aliases/contact': typeof AliasesContactRoute
-  '/_aliases/team': typeof AliasesTeamRoute
-  '/eda/report': typeof EdaReportRoute
-  '/go/$slug': typeof GoSlugRoute
-  '/posts/$postId': typeof PostsPostIdRoute
-  '/posts/@{$author}': typeof PostsAtChar123authorChar125Route
-  '/programs/$program': typeof ProgramsProgramRoute
-  '/tools/birdie': typeof ToolsBirdieRoute
-  '/tools/bogey': typeof ToolsBogeyRoute
-  '/tools/legacy': typeof ToolsLegacyRoute
-  '/tools/under-construction': typeof ToolsUnderConstructionRoute
-  '/about/': typeof AboutIndexRoute
-  '/posts/': typeof PostsIndexRoute
-  '/tools/': typeof ToolsIndexRoute
-  '/posts/tag/$tag': typeof PostsTagTagRoute
+  __root__: typeof rootRouteImport;
+  "/": typeof IndexRoute;
+  "/posts": typeof PostsRouteRouteWithChildren;
+  "/tools": typeof ToolsRouteRouteWithChildren;
+  "/developer": typeof DeveloperRoute;
+  "/signature": typeof SignatureRoute;
+  "/thecakeisalie": typeof ThecakeisalieRoute;
+  "/_aliases/about-us": typeof AliasesAboutUsRoute;
+  "/_aliases/contact": typeof AliasesContactRoute;
+  "/_aliases/team": typeof AliasesTeamRoute;
+  "/eda/report": typeof EdaReportRoute;
+  "/go/$slug": typeof GoSlugRoute;
+  "/posts/$postId": typeof PostsPostIdRoute;
+  "/posts/@{$author}": typeof PostsAtChar123authorChar125Route;
+  "/programs/$program": typeof ProgramsProgramRoute;
+  "/tools/birdie": typeof ToolsBirdieRoute;
+  "/tools/bogey": typeof ToolsBogeyRoute;
+  "/tools/legacy": typeof ToolsLegacyRoute;
+  "/tools/under-construction": typeof ToolsUnderConstructionRoute;
+  "/about/": typeof AboutIndexRoute;
+  "/posts/": typeof PostsIndexRoute;
+  "/tools/": typeof ToolsIndexRoute;
+  "/posts/tag/$tag": typeof PostsTagTagRoute;
 }
 export interface FileRouteTypes {
-  fileRoutesByFullPath: FileRoutesByFullPath
+  fileRoutesByFullPath: FileRoutesByFullPath;
   fullPaths:
-    | '/'
-    | '/posts'
-    | '/tools'
-    | '/developer'
-    | '/thecakeisalie'
-    | '/about-us'
-    | '/contact'
-    | '/team'
-    | '/eda/report'
-    | '/go/$slug'
-    | '/posts/$postId'
-    | '/posts/@{$author}'
-    | '/programs/$program'
-    | '/tools/birdie'
-    | '/tools/bogey'
-    | '/tools/legacy'
-    | '/tools/under-construction'
-    | '/about/'
-    | '/posts/'
-    | '/tools/'
-    | '/posts/tag/$tag'
-  fileRoutesByTo: FileRoutesByTo
+    | "/"
+    | "/posts"
+    | "/tools"
+    | "/developer"
+    | "/signature"
+    | "/thecakeisalie"
+    | "/about-us"
+    | "/contact"
+    | "/team"
+    | "/eda/report"
+    | "/go/$slug"
+    | "/posts/$postId"
+    | "/posts/@{$author}"
+    | "/programs/$program"
+    | "/tools/birdie"
+    | "/tools/bogey"
+    | "/tools/legacy"
+    | "/tools/under-construction"
+    | "/about/"
+    | "/posts/"
+    | "/tools/"
+    | "/posts/tag/$tag";
+  fileRoutesByTo: FileRoutesByTo;
   to:
-    | '/'
-    | '/developer'
-    | '/thecakeisalie'
-    | '/about-us'
-    | '/contact'
-    | '/team'
-    | '/eda/report'
-    | '/go/$slug'
-    | '/posts/$postId'
-    | '/posts/@{$author}'
-    | '/programs/$program'
-    | '/tools/birdie'
-    | '/tools/bogey'
-    | '/tools/legacy'
-    | '/tools/under-construction'
-    | '/about'
-    | '/posts'
-    | '/tools'
-    | '/posts/tag/$tag'
+    | "/"
+    | "/developer"
+    | "/signature"
+    | "/thecakeisalie"
+    | "/about-us"
+    | "/contact"
+    | "/team"
+    | "/eda/report"
+    | "/go/$slug"
+    | "/posts/$postId"
+    | "/posts/@{$author}"
+    | "/programs/$program"
+    | "/tools/birdie"
+    | "/tools/bogey"
+    | "/tools/legacy"
+    | "/tools/under-construction"
+    | "/about"
+    | "/posts"
+    | "/tools"
+    | "/posts/tag/$tag";
   id:
-    | '__root__'
-    | '/'
-    | '/posts'
-    | '/tools'
-    | '/developer'
-    | '/thecakeisalie'
-    | '/_aliases/about-us'
-    | '/_aliases/contact'
-    | '/_aliases/team'
-    | '/eda/report'
-    | '/go/$slug'
-    | '/posts/$postId'
-    | '/posts/@{$author}'
-    | '/programs/$program'
-    | '/tools/birdie'
-    | '/tools/bogey'
-    | '/tools/legacy'
-    | '/tools/under-construction'
-    | '/about/'
-    | '/posts/'
-    | '/tools/'
-    | '/posts/tag/$tag'
-  fileRoutesById: FileRoutesById
+    | "__root__"
+    | "/"
+    | "/posts"
+    | "/tools"
+    | "/developer"
+    | "/signature"
+    | "/thecakeisalie"
+    | "/_aliases/about-us"
+    | "/_aliases/contact"
+    | "/_aliases/team"
+    | "/eda/report"
+    | "/go/$slug"
+    | "/posts/$postId"
+    | "/posts/@{$author}"
+    | "/programs/$program"
+    | "/tools/birdie"
+    | "/tools/bogey"
+    | "/tools/legacy"
+    | "/tools/under-construction"
+    | "/about/"
+    | "/posts/"
+    | "/tools/"
+    | "/posts/tag/$tag";
+  fileRoutesById: FileRoutesById;
 }
 export interface RootRouteChildren {
-  IndexRoute: typeof IndexRoute
-  PostsRouteRoute: typeof PostsRouteRouteWithChildren
-  ToolsRouteRoute: typeof ToolsRouteRouteWithChildren
-  DeveloperRoute: typeof DeveloperRoute
-  ThecakeisalieRoute: typeof ThecakeisalieRoute
-  AliasesAboutUsRoute: typeof AliasesAboutUsRoute
-  AliasesContactRoute: typeof AliasesContactRoute
-  AliasesTeamRoute: typeof AliasesTeamRoute
-  EdaReportRoute: typeof EdaReportRoute
-  GoSlugRoute: typeof GoSlugRoute
-  ProgramsProgramRoute: typeof ProgramsProgramRoute
-  AboutIndexRoute: typeof AboutIndexRoute
+  IndexRoute: typeof IndexRoute;
+  PostsRouteRoute: typeof PostsRouteRouteWithChildren;
+  ToolsRouteRoute: typeof ToolsRouteRouteWithChildren;
+  DeveloperRoute: typeof DeveloperRoute;
+  SignatureRoute: typeof SignatureRoute;
+  ThecakeisalieRoute: typeof ThecakeisalieRoute;
+  AliasesAboutUsRoute: typeof AliasesAboutUsRoute;
+  AliasesContactRoute: typeof AliasesContactRoute;
+  AliasesTeamRoute: typeof AliasesTeamRoute;
+  EdaReportRoute: typeof EdaReportRoute;
+  GoSlugRoute: typeof GoSlugRoute;
+  ProgramsProgramRoute: typeof ProgramsProgramRoute;
+  AboutIndexRoute: typeof AboutIndexRoute;
 }
 
-declare module '@tanstack/react-router' {
+declare module "@tanstack/react-router" {
   interface FileRoutesByPath {
-    '/thecakeisalie': {
-      id: '/thecakeisalie'
-      path: '/thecakeisalie'
-      fullPath: '/thecakeisalie'
-      preLoaderRoute: typeof ThecakeisalieRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/developer': {
-      id: '/developer'
-      path: '/developer'
-      fullPath: '/developer'
-      preLoaderRoute: typeof DeveloperRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/tools': {
-      id: '/tools'
-      path: '/tools'
-      fullPath: '/tools'
-      preLoaderRoute: typeof ToolsRouteRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/posts': {
-      id: '/posts'
-      path: '/posts'
-      fullPath: '/posts'
-      preLoaderRoute: typeof PostsRouteRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/tools/': {
-      id: '/tools/'
-      path: '/'
-      fullPath: '/tools/'
-      preLoaderRoute: typeof ToolsIndexRouteImport
-      parentRoute: typeof ToolsRouteRoute
-    }
-    '/posts/': {
-      id: '/posts/'
-      path: '/'
-      fullPath: '/posts/'
-      preLoaderRoute: typeof PostsIndexRouteImport
-      parentRoute: typeof PostsRouteRoute
-    }
-    '/about/': {
-      id: '/about/'
-      path: '/about'
-      fullPath: '/about/'
-      preLoaderRoute: typeof AboutIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/tools/under-construction': {
-      id: '/tools/under-construction'
-      path: '/under-construction'
-      fullPath: '/tools/under-construction'
-      preLoaderRoute: typeof ToolsUnderConstructionRouteImport
-      parentRoute: typeof ToolsRouteRoute
-    }
-    '/tools/legacy': {
-      id: '/tools/legacy'
-      path: '/legacy'
-      fullPath: '/tools/legacy'
-      preLoaderRoute: typeof ToolsLegacyRouteImport
-      parentRoute: typeof ToolsRouteRoute
-    }
-    '/tools/bogey': {
-      id: '/tools/bogey'
-      path: '/bogey'
-      fullPath: '/tools/bogey'
-      preLoaderRoute: typeof ToolsBogeyRouteImport
-      parentRoute: typeof ToolsRouteRoute
-    }
-    '/tools/birdie': {
-      id: '/tools/birdie'
-      path: '/birdie'
-      fullPath: '/tools/birdie'
-      preLoaderRoute: typeof ToolsBirdieRouteImport
-      parentRoute: typeof ToolsRouteRoute
-    }
-    '/programs/$program': {
-      id: '/programs/$program'
-      path: '/programs/$program'
-      fullPath: '/programs/$program'
-      preLoaderRoute: typeof ProgramsProgramRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/posts/@{$author}': {
-      id: '/posts/@{$author}'
-      path: '/@{$author}'
-      fullPath: '/posts/@{$author}'
-      preLoaderRoute: typeof PostsAtChar123authorChar125RouteImport
-      parentRoute: typeof PostsRouteRoute
-    }
-    '/posts/$postId': {
-      id: '/posts/$postId'
-      path: '/$postId'
-      fullPath: '/posts/$postId'
-      preLoaderRoute: typeof PostsPostIdRouteImport
-      parentRoute: typeof PostsRouteRoute
-    }
-    '/go/$slug': {
-      id: '/go/$slug'
-      path: '/go/$slug'
-      fullPath: '/go/$slug'
-      preLoaderRoute: typeof GoSlugRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/eda/report': {
-      id: '/eda/report'
-      path: '/eda/report'
-      fullPath: '/eda/report'
-      preLoaderRoute: typeof EdaReportRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/_aliases/team': {
-      id: '/_aliases/team'
-      path: '/team'
-      fullPath: '/team'
-      preLoaderRoute: typeof AliasesTeamRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/_aliases/contact': {
-      id: '/_aliases/contact'
-      path: '/contact'
-      fullPath: '/contact'
-      preLoaderRoute: typeof AliasesContactRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/_aliases/about-us': {
-      id: '/_aliases/about-us'
-      path: '/about-us'
-      fullPath: '/about-us'
-      preLoaderRoute: typeof AliasesAboutUsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/posts/tag/$tag': {
-      id: '/posts/tag/$tag'
-      path: '/tag/$tag'
-      fullPath: '/posts/tag/$tag'
-      preLoaderRoute: typeof PostsTagTagRouteImport
-      parentRoute: typeof PostsRouteRoute
-    }
+    "/thecakeisalie": {
+      id: "/thecakeisalie";
+      path: "/thecakeisalie";
+      fullPath: "/thecakeisalie";
+      preLoaderRoute: typeof ThecakeisalieRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/signature": {
+      id: "/signature";
+      path: "/signature";
+      fullPath: "/signature";
+      preLoaderRoute: typeof SignatureRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/developer": {
+      id: "/developer";
+      path: "/developer";
+      fullPath: "/developer";
+      preLoaderRoute: typeof DeveloperRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/tools": {
+      id: "/tools";
+      path: "/tools";
+      fullPath: "/tools";
+      preLoaderRoute: typeof ToolsRouteRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/posts": {
+      id: "/posts";
+      path: "/posts";
+      fullPath: "/posts";
+      preLoaderRoute: typeof PostsRouteRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/": {
+      id: "/";
+      path: "/";
+      fullPath: "/";
+      preLoaderRoute: typeof IndexRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/tools/": {
+      id: "/tools/";
+      path: "/";
+      fullPath: "/tools/";
+      preLoaderRoute: typeof ToolsIndexRouteImport;
+      parentRoute: typeof ToolsRouteRoute;
+    };
+    "/posts/": {
+      id: "/posts/";
+      path: "/";
+      fullPath: "/posts/";
+      preLoaderRoute: typeof PostsIndexRouteImport;
+      parentRoute: typeof PostsRouteRoute;
+    };
+    "/about/": {
+      id: "/about/";
+      path: "/about";
+      fullPath: "/about/";
+      preLoaderRoute: typeof AboutIndexRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/tools/under-construction": {
+      id: "/tools/under-construction";
+      path: "/under-construction";
+      fullPath: "/tools/under-construction";
+      preLoaderRoute: typeof ToolsUnderConstructionRouteImport;
+      parentRoute: typeof ToolsRouteRoute;
+    };
+    "/tools/legacy": {
+      id: "/tools/legacy";
+      path: "/legacy";
+      fullPath: "/tools/legacy";
+      preLoaderRoute: typeof ToolsLegacyRouteImport;
+      parentRoute: typeof ToolsRouteRoute;
+    };
+    "/tools/bogey": {
+      id: "/tools/bogey";
+      path: "/bogey";
+      fullPath: "/tools/bogey";
+      preLoaderRoute: typeof ToolsBogeyRouteImport;
+      parentRoute: typeof ToolsRouteRoute;
+    };
+    "/tools/birdie": {
+      id: "/tools/birdie";
+      path: "/birdie";
+      fullPath: "/tools/birdie";
+      preLoaderRoute: typeof ToolsBirdieRouteImport;
+      parentRoute: typeof ToolsRouteRoute;
+    };
+    "/programs/$program": {
+      id: "/programs/$program";
+      path: "/programs/$program";
+      fullPath: "/programs/$program";
+      preLoaderRoute: typeof ProgramsProgramRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/posts/@{$author}": {
+      id: "/posts/@{$author}";
+      path: "/@{$author}";
+      fullPath: "/posts/@{$author}";
+      preLoaderRoute: typeof PostsAtChar123authorChar125RouteImport;
+      parentRoute: typeof PostsRouteRoute;
+    };
+    "/posts/$postId": {
+      id: "/posts/$postId";
+      path: "/$postId";
+      fullPath: "/posts/$postId";
+      preLoaderRoute: typeof PostsPostIdRouteImport;
+      parentRoute: typeof PostsRouteRoute;
+    };
+    "/go/$slug": {
+      id: "/go/$slug";
+      path: "/go/$slug";
+      fullPath: "/go/$slug";
+      preLoaderRoute: typeof GoSlugRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/eda/report": {
+      id: "/eda/report";
+      path: "/eda/report";
+      fullPath: "/eda/report";
+      preLoaderRoute: typeof EdaReportRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/_aliases/team": {
+      id: "/_aliases/team";
+      path: "/team";
+      fullPath: "/team";
+      preLoaderRoute: typeof AliasesTeamRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/_aliases/contact": {
+      id: "/_aliases/contact";
+      path: "/contact";
+      fullPath: "/contact";
+      preLoaderRoute: typeof AliasesContactRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/_aliases/about-us": {
+      id: "/_aliases/about-us";
+      path: "/about-us";
+      fullPath: "/about-us";
+      preLoaderRoute: typeof AliasesAboutUsRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/posts/tag/$tag": {
+      id: "/posts/tag/$tag";
+      path: "/tag/$tag";
+      fullPath: "/posts/tag/$tag";
+      preLoaderRoute: typeof PostsTagTagRouteImport;
+      parentRoute: typeof PostsRouteRoute;
+    };
   }
 }
 
 interface PostsRouteRouteChildren {
-  PostsPostIdRoute: typeof PostsPostIdRoute
-  PostsAtChar123authorChar125Route: typeof PostsAtChar123authorChar125Route
-  PostsIndexRoute: typeof PostsIndexRoute
-  PostsTagTagRoute: typeof PostsTagTagRoute
+  PostsPostIdRoute: typeof PostsPostIdRoute;
+  PostsAtChar123authorChar125Route: typeof PostsAtChar123authorChar125Route;
+  PostsIndexRoute: typeof PostsIndexRoute;
+  PostsTagTagRoute: typeof PostsTagTagRoute;
 }
 
 const PostsRouteRouteChildren: PostsRouteRouteChildren = {
@@ -455,18 +474,16 @@ const PostsRouteRouteChildren: PostsRouteRouteChildren = {
   PostsAtChar123authorChar125Route: PostsAtChar123authorChar125Route,
   PostsIndexRoute: PostsIndexRoute,
   PostsTagTagRoute: PostsTagTagRoute,
-}
+};
 
-const PostsRouteRouteWithChildren = PostsRouteRoute._addFileChildren(
-  PostsRouteRouteChildren,
-)
+const PostsRouteRouteWithChildren = PostsRouteRoute._addFileChildren(PostsRouteRouteChildren);
 
 interface ToolsRouteRouteChildren {
-  ToolsBirdieRoute: typeof ToolsBirdieRoute
-  ToolsBogeyRoute: typeof ToolsBogeyRoute
-  ToolsLegacyRoute: typeof ToolsLegacyRoute
-  ToolsUnderConstructionRoute: typeof ToolsUnderConstructionRoute
-  ToolsIndexRoute: typeof ToolsIndexRoute
+  ToolsBirdieRoute: typeof ToolsBirdieRoute;
+  ToolsBogeyRoute: typeof ToolsBogeyRoute;
+  ToolsLegacyRoute: typeof ToolsLegacyRoute;
+  ToolsUnderConstructionRoute: typeof ToolsUnderConstructionRoute;
+  ToolsIndexRoute: typeof ToolsIndexRoute;
 }
 
 const ToolsRouteRouteChildren: ToolsRouteRouteChildren = {
@@ -475,17 +492,16 @@ const ToolsRouteRouteChildren: ToolsRouteRouteChildren = {
   ToolsLegacyRoute: ToolsLegacyRoute,
   ToolsUnderConstructionRoute: ToolsUnderConstructionRoute,
   ToolsIndexRoute: ToolsIndexRoute,
-}
+};
 
-const ToolsRouteRouteWithChildren = ToolsRouteRoute._addFileChildren(
-  ToolsRouteRouteChildren,
-)
+const ToolsRouteRouteWithChildren = ToolsRouteRoute._addFileChildren(ToolsRouteRouteChildren);
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   PostsRouteRoute: PostsRouteRouteWithChildren,
   ToolsRouteRoute: ToolsRouteRouteWithChildren,
   DeveloperRoute: DeveloperRoute,
+  SignatureRoute: SignatureRoute,
   ThecakeisalieRoute: ThecakeisalieRoute,
   AliasesAboutUsRoute: AliasesAboutUsRoute,
   AliasesContactRoute: AliasesContactRoute,
@@ -494,7 +510,7 @@ const rootRouteChildren: RootRouteChildren = {
   GoSlugRoute: GoSlugRoute,
   ProgramsProgramRoute: ProgramsProgramRoute,
   AboutIndexRoute: AboutIndexRoute,
-}
+};
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
-  ._addFileTypes<FileRouteTypes>()
+  ._addFileTypes<FileRouteTypes>();

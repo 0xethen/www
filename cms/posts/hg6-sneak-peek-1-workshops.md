@@ -20,4 +20,4 @@ This sneak peek is hidden... because it doesn't exist yet
 How provocative! How thrilling!! How cool!!! But we're not done yet: stay tuned for our next sneak peek where we'll reveal even MORE of what's coming to HackGwinnett 6.0. Can't wait to see you all there! 😄
 
 Stay inventive,
-![Ethen's signature](/assets/posts/signatures/ethen-smiley.svg =150x80)
+![Ethen's signature](/www/assets/posts/signatures/ethen-smiley.svg =150x80)
