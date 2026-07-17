@@ -115,7 +115,7 @@ function RouteComponent() {
               <Magnetic intensity={0.4}>
                 <Button
                   render={<Link to="/go/$slug" params={{ slug: "register" }} unstyled />}
-                  className="cursor-none striped-hg-green active:scale-98"
+                  className="cursor-none striped-hg-green hover:not-active:scale-102"
                   variant="hero"
                   size={isMobile ? "sm" : "lg"}
                   nativeButton={false}
@@ -128,7 +128,7 @@ function RouteComponent() {
                   render={
                     <Link to="/programs/$program" params={{ program: "hackathon" }} unstyled />
                   }
-                  className="cursor-none active:scale-98"
+                  className="cursor-none hover:not-active:scale-102"
                   variant="glass"
                   size={isMobile ? "sm" : "lg"}
                   nativeButton={false}
