@@ -8,18 +8,15 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - uses: voidzero-dev/setup-vp@v1
         with:
           node-version: "24"
           cache: true
 
-      - name: install deps
-        run: vp install
-
-      - name: build
-        run: vp build
+      - name: build step
+        run: vp run build
 
       - name: create 404.html
         run: cp dist/index.html dist/404.html
