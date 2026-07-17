@@ -128,7 +128,7 @@ function RouteComponent() {
                   render={
                     <Link to="/programs/$program" params={{ program: "hackathon" }} unstyled />
                   }
-                  className="cursor-none hover:not-active:scale-102"
+                  className="cursor-none hover:not-active:scale-105"
                   variant="glass"
                   size={isMobile ? "sm" : "lg"}
                   nativeButton={false}

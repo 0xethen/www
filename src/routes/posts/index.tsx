@@ -106,7 +106,7 @@ function RouteComponent() {
                     <img
                       src={post.cover.src}
                       alt={post.cover.alt}
-                      className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-102"
+                      className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                     />
                   </div>
                 )}
