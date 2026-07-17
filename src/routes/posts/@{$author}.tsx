@@ -7,7 +7,7 @@ import { ExtLink, Link } from "@/components/ui/ethendotapp/link";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Separator } from "@/components/ui/separator";
 import { cap } from "@/lib/utils";
-import { RiInstagramLine, RiTwitterLine } from "@remixicon/react";
+import { RiGithubFill, RiInstagramLine, RiTwitterLine } from "@remixicon/react";
 import { createFileRoute, notFound } from "@tanstack/react-router";
 import { posts } from "cms/posts";
 import { authorInfo } from "cms/authors";
@@ -69,6 +69,7 @@ function RouteComponent() {
               >
                 {social.platform === "Instagram" && <RiInstagramLine />}
                 {social.platform === "Twitter" && <RiTwitterLine />}
+                {social.platform === "GitHub" && <RiGithubFill />}
                 {social.platform === "Email" && "@"}
               </Button>
             ))}
@@ -88,16 +89,16 @@ function RouteComponent() {
                     {post.title}
                   </a>
                 </CardTitle>
-                <CardDescription className="text-sm">{/* {post.excerpt ?? ""} */}</CardDescription>
+                <CardDescription className="text-sm">{post.summary}</CardDescription>
               </CardHeader>
               <CardContent className="flex items-center justify-between">
                 <div className="text-sm text-muted-foreground">
-                  {/* {post.readingTime ? `${post.readingTime} min read · ` : ""}
-                  {post.date ? format(new Date(post.date), "MMM d, yyyy") : ""} */}
+                  {/* {post.readingTime ? `${post.readingTime} min read · ` : ""}*/}
+                  {post.date ? post.date.toLocaleDateString([], { dateStyle: "long" }) : ""}
                 </div>
                 <div>
                   <Link to="/posts/$postId" params={{ postId: post._meta.path.slugify() }}>
-                    Read
+                    Read article <span aria-hidden="true">&rarr;</span>
                   </Link>
                 </div>
               </CardContent>

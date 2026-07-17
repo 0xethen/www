@@ -2,7 +2,7 @@ interface AuthorInfo {
   name: string;
   bio: string;
   avatar: string;
-  socials?: { platform: "Instagram" | "Twitter" | "Email"; url: string }[];
+  socials?: { platform: "Instagram" | "Twitter" | "GitHub" | "Email"; url: string }[];
   officer?: boolean;
 }
 
@@ -17,7 +17,8 @@ export const authorInfo: Record<string, AuthorInfo> = {
     avatar: "https://avatars.githubusercontent.com/hackgwinnett",
     socials: [
       { platform: "Instagram", url: "https://instagram.com/hackgwinnett" },
-      { platform: "Twitter", url: "https://twitter.com/hackgwinnett" },
+      { platform: "GitHub", url: "https://github.com/hackgwinnett" },
+      { platform: "Email", url: "mailto:hello@hackgwinnett.com" },
     ],
     officer: true,
   },
@@ -25,7 +26,10 @@ export const authorInfo: Record<string, AuthorInfo> = {
     name: "Ethen Tseggai",
     bio: "enjoys water and long walks on the beach",
     avatar: "https://avatars.githubusercontent.com/0xethen",
-    socials: [{ platform: "Instagram", url: "https://instagram.com/ethentseggai" }],
+    socials: [
+      { platform: "Instagram", url: "https://instagram.com/ethentseggai" },
+      { platform: "GitHub", url: "https://github.com/0xethen" },
+    ],
     officer: true,
   },
   gurt: {

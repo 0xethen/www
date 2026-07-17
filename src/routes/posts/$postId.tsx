@@ -148,7 +148,7 @@ function RouteComponent() {
       <Separator className="my-6" />
 
       <div
-        className="typeset max-w-none space-y-2"
+        className="typeset max-w-none"
         dangerouslySetInnerHTML={{ __html: md.makeHtml(post.content) }}
       />
     </article>
