@@ -16,12 +16,19 @@ jobs:
       - name: Run vp for 3 seconds
         shell: bash
         run: |
+          ps -p "$PID" || true
           set -euo pipefail
+
           vp run &
           PID=$!
+
           sleep 3
-          kill "$PID" || true
-          wait "$PID" || true
+
+          if kill -0 "$PID" 2>/dev/null; then
+            kill "$PID" || true
+          fi
+
+          wait "$PID" 2>/dev/null || true
 
       - name: install deps
         run: vp install
