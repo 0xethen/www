@@ -76,8 +76,8 @@ function RouteComponent() {
 
       <div className="bg-blue-500 "></div>
 
-      <div className="min-h-safe-dvh bg-hg-black bg-[url('/assets/images/hero/bgtexture01.svg')] text-white">
-        <div className="min-h-safe-dvh px-8 md:px-12 flex flex-row items-center justify-between gap-12 animate-in fade-in slide-in-from-bottom-5 animation-duration-800 animation-delay-50 fill-mode-backwards">
+      <div className="relative min-h-[85dvh] md:min-h-safe-dvh bg-hg-black bg-[url('/assets/images/hero/bgtexture01.svg')] text-white">
+        <div className="min-h-[85dvh] md:min-h-safe-dvh px-8 md:px-12 flex flex-row items-center justify-between gap-12 animate-in fade-in slide-in-from-bottom-5 animation-duration-800 animation-delay-50 fill-mode-backwards">
           <div className="flex flex-col justify-center gap-4">
             <ColorBadge
               render={
@@ -169,7 +169,7 @@ function RouteComponent() {
             </button>
           </Carousel>
         </div>
-        <div className="absolute bottom-0 left-[49dvw] flex justify-center pb-8">
+        <div className="absolute bottom-0 left-[46vw] flex justify-center pb-8">
           <Magnetic intensity={0.4}>
             <Button
               className={cn(

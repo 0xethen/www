@@ -1,8 +1,8 @@
 import { createFileRoute, type ErrorComponentProps } from "@tanstack/react-router";
-import { z } from "zod";
 import { Link } from "@/components/ui/ethendotapp/link";
 import { TextScramble } from "@/components/ui/motion-primitives/text-scramble";
 import { cn } from "@/lib/utils";
+import { z } from "zod";
 
 const templates = {
   "missing-content": {
@@ -12,13 +12,13 @@ const templates = {
   },
 };
 
-const issueSearchSchema = z.object({
-  from: z.string().optional(), // the route the user came from, if applicable
-  c: z.number().optional(),
-  t: z.keyof(z.object(templates)).optional(), // template
-});
-
 export const Route = createFileRoute("/eda/report")({
+  staticData: { config: { title: { text: "Report a problem" } } },
+  validateSearch: z.object({
+    from: z.string().optional(), // the route the user came from, if applicable
+    c: z.number().optional(),
+    t: z.keyof(z.object(templates)).optional(), // template
+  }),
   beforeLoad: ({ search }) => {
     if (search.from === "/thecakeisalie")
       throw new Response(JSON.stringify({ error: "Internal Server Error" }), {
@@ -26,8 +26,6 @@ export const Route = createFileRoute("/eda/report")({
         statusText: "the cake is a lie",
       });
   },
-  validateSearch: issueSearchSchema,
-  staticData: { config: { title: { text: "Report a problem" } } },
   component: RouteComponent,
   errorComponent: ErrorComponent,
 });

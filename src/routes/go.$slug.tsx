@@ -2,7 +2,7 @@ import { createFileRoute, notFound } from "@tanstack/react-router";
 import { brandInfo } from "@/lib/meta";
 
 export const goRedirects: Record<string, string> = {
-  register: "/hackathon",
+  register: "/programs/hackathon",
   report: "/eda/report",
   instagram: brandInfo.socials.instagram || "/",
   discord: brandInfo.socials.discord || "/",
