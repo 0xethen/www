@@ -39,6 +39,16 @@
     @apply text-xl sm:text-2xl md:text-3xl font-semibold;
   }
 
+  @supports not (display: grid-lanes) {
+    .grid-lanes {
+      display: grid;
+    }
+  }
+
+  .grid-lanes {
+    display: grid-lanes;
+  }
+
   .link:not(.button-link) {
     @apply underline underline-offset-2 decoration-inherit/50 hover:decoration-primary/80;
   }

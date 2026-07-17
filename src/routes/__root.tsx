@@ -114,7 +114,7 @@ function RootDocument() {
             position: "bottom-right",
             customTrigger: (
               <img
-                src="/assets/images/brand/hgbeta.png"
+                src="/www/assets/images/brand/hgbeta.png"
                 className="size-12 border-border border-2 rounded-full"
               />
             ),

@@ -132,7 +132,7 @@ function RouteComponent() {
             {new Date(post.date).toLocaleDateString([], { dateStyle: "long" })}
           </p>
 
-          <p className="text-muted-foreground">-1 views</p>
+          {/*<p className="text-muted-foreground">-1 views</p>  TODO: view counter  */}
         </div>
         {post.tags && (
           <div className="mt-2 flex flex-wrap gap-2">

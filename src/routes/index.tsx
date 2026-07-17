@@ -139,10 +139,7 @@ function RouteComponent() {
             </div>
           </div>
           <Carousel
-            plugins={[
-              Autoplay({ active: !carouselPaused, stopOnInteraction: false }),
-              WheelGestures(),
-            ]}
+            plugins={[Autoplay({ active: !carouselPaused, stopOnLastSnap: true }), WheelGestures()]}
             className={cn(
               "group relative hidden xl:inline-flex max-w-xs xl:max-w-sm",
               "animate-in fade-in slide-in-from-bottom-5 animation-duration-1000 animation-delay-100 fill-mode-backwards",
@@ -253,7 +250,7 @@ function RouteComponent() {
             <span className="text-muted-foreground/50">
               Prizes brought to you by{" "}
               <img
-                src="/assets/images/sponsors/sf-symbol.svg"
+                src="/www/assets/images/sponsors/sf-symbol.svg"
                 alt="State Farm Brand Icon"
                 className="inline h-[1em] not-hover:grayscale opacity-50 drag-none"
               />
@@ -297,7 +294,7 @@ const SponsorLogo = ({
     unstyled
   >
     <img
-      src={`/assets/images/sponsors/${sponsor.src}`}
+      src={`/www/assets/images/sponsors/${sponsor.src}`}
       alt={sponsor.title}
       className={cn(
         "max-h-12 max-w-full object-contain transition grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-100 group-focus-visible:grayscale-0 group-focus-visible:opacity-100 select-none",

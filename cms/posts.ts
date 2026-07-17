@@ -8,6 +8,10 @@ export const allPosts = ccPosts
   .map((p) => ({
     ...p,
     date: new Date(p.date),
+    cover: {
+      ...p.cover,
+      src: p.cover?.src.startsWith("/") ? `/www/${p.cover.src}` : p.cover?.src,
+    },
     authors: p.authors.map((id: string) => ({ id, ...authorInfo[id] })) as Author[],
   }));
 

@@ -4,6 +4,7 @@ export const Route = createFileRoute("/posts")({
   component: Outlet,
   pendingComponent: PendingComponent,
 });
+
 function PendingComponent() {
   return (
     <div className="mx-auto max-w-4xl px-4 py-8">

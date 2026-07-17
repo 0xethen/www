@@ -4,7 +4,7 @@ type BufferMap = Map<string, AudioBuffer>;
 type SourceSet = Set<AudioBufferSourceNode>;
 
 const DEFAULT_EXT = ".wav";
-const ASSET_PREFIX = "/assets";
+const ASSET_PREFIX = "/www/assets";
 
 export function useSound() {
   const ctxRef = useRef<AudioContext | null>(null);
