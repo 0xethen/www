@@ -13,7 +13,10 @@ jobs:
           node-version: "24"
           cache: true
 
-      - name: build site
+      - name: install deps
+        run: vp install
+
+      - name: build
         run: vp run build
 
       - name: create 404.html
