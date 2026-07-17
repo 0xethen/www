@@ -162,7 +162,7 @@ export function Header({
           <Link to="/" title="HackGwinnett Logo" className="text-xl font-brand font-bold" unstyled>
             [HG]
           </Link>
-          {import.meta.env.DEV && <Link to="/developer">+</Link>}
+          {import.meta.env.DEV && <Link to="/developer">++</Link>}
         </span>
 
         <div

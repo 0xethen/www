@@ -1,7 +1,7 @@
 {
   "include": ["**/*.ts", "**/*.tsx"],
   "compilerOptions": {
-    "target": "ES2022",
+    "target": "es2024",
     "jsx": "react-jsx",
     "module": "ESNext",
     "paths": {
@@ -9,7 +9,7 @@
       "content-collections": ["./.content-collections/generated"],
       "cms/*": ["./cms/*"]
     },
-    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "lib": ["ES2024", "DOM", "DOM.Iterable"],
     "types": ["vite-plus/client"],
 
     /* Bundler mode */

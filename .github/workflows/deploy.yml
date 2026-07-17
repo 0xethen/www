@@ -1,51 +1,26 @@
-# https://github.com/actions/deploy-pages#usage
-# https://nitro.build/deploy/providers/github-pages
-name: Deploy to GH Pages (Nitro, static)
+name: Deploy to GitHub Pages
 
 on:
-  workflow_dispatch:
   push:
-    branches:
-      - main
+    branches: [main]
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7
-      - run: corepack enable
-      - uses: actions/setup-node@v7
+      - uses: voidzero-dev/setup-vp@v1
         with:
           node-version: "24"
+          cache: true
 
-      - run: pnpx nypm install # use npm?
-      - run: pnpm run build # use npm?
-        env:
-          NITRO_PRESET: github_pages
+      - name: build site
+        run: vp run build
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v4
-        with:
-          path: ./.output/public
+      - name: create 404.html
+        run: cp dist/index.html dist/404.html
 
-  # Deployment job
-  deploy:
-    # Add a dependency to the build job
-    needs: build
-
-    # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
-    permissions:
-      pages: write # to deploy to Pages
-      id-token: write # to verify the deployment originates from an appropriate source
-
-    # Deploy to the github_pages environment
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
-    # Specify runner + deployment step
-    runs-on: ubuntu-latest
-    steps:
       - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v5
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist

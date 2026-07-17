@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import showdown from "showdown";
 // @ts-ignore
 import targetblank from "showdown-target-blank";
-import { revalidateLogic, useForm } from "@tanstack/react-form-start"; // replace with react-form-start once #1882 is resolved
+import { revalidateLogic, useForm } from "@tanstack/react-form";
 import { z } from "zod";
 import { Field, FieldDescription, FieldError, FieldGroup, FieldLabel } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";

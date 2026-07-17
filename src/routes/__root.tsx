@@ -1,6 +1,6 @@
 import {
+  Outlet,
   HeadContent,
-  Scripts,
   createRootRoute,
   useMatches,
   type RootRoute,
@@ -14,7 +14,7 @@ import { ConsoleSecrets } from "@/routes/thecakeisalie";
 import { brandInfo } from "@/lib/meta";
 import { Header } from "@/components/elements/Header";
 import { Toaster } from "@/components/ui/sonner";
-import type { Register } from "@tanstack/react-start";
+import { useEffect } from "react";
 
 const buildTitle = (matches: ReturnType<typeof useMatches>): string => {
   if (matches[matches.length - 1].globalNotFound) return `Not Found / ${brandInfo.name}`;
@@ -27,7 +27,9 @@ const buildTitle = (matches: ReturnType<typeof useMatches>): string => {
   return titles.length ? `${titles.join(" / ")} / ${brandInfo.name}` : brandInfo.name;
 };
 
-export const Route: RootRoute<Register> = createRootRoute({
+// style="background-color: #01150a"
+
+export const Route: RootRoute = createRootRoute({
   head: (ctx) => ({
     meta: [
       {
@@ -59,7 +61,7 @@ export const Route: RootRoute<Register> = createRootRoute({
   shellComponent: RootDocument,
 });
 
-function RootDocument({ children }: { children: React.ReactNode }) {
+function RootDocument() {
   const matches = useMatches();
 
   const getHasLayoutOffset = () => {
@@ -76,15 +78,22 @@ function RootDocument({ children }: { children: React.ReactNode }) {
     );
   };
 
+  // TODO: this is a quick client-side patch, maybe look into an alt. solution
+  useEffect(() => {
+    document.body.className =
+      [...matches].reverse().find((m) => m.staticData?.config?.classNames?.root)?.staticData.config
+        ?.classNames?.root || "";
+  }, [matches]);
+
   return (
-    <html lang="en" data-header={getHasLayoutOffset()}>
-      <head>
-        <HeadContent />
-      </head>
-      <body
+    <>
+      {" "}
+      <HeadContent />
+      <div
+        id="dataroot"
+        data-header={getHasLayoutOffset()}
         className={cn(
-          [...matches].reverse().find((m) => m.staticData?.config?.classNames?.root)?.staticData
-            .config?.classNames?.root,
+          // [...matches].reverse().find((m) => m.staticData?.config?.classNames?.root)?.staticData.config?.classNames?.root,
           "overscroll-x-none",
           getHeaderVisible() && "overscroll-y-none",
         )}
@@ -96,7 +105,9 @@ function RootDocument({ children }: { children: React.ReactNode }) {
             detached={matches[matches.length - 1].staticData.header?.detached}
           />
         )}
-        <TooltipProvider>{children}</TooltipProvider>
+        <TooltipProvider>
+          <Outlet />
+        </TooltipProvider>
         <Toaster richColors closeButton position="top-center" />
         <TanStackDevtools
           config={{
@@ -115,9 +126,8 @@ function RootDocument({ children }: { children: React.ReactNode }) {
             },
           ]}
         />
-        <Scripts />
         <ConsoleSecrets />
-      </body>
-    </html>
+      </div>
+    </>
   );
 }

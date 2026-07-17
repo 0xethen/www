@@ -86,7 +86,7 @@
 
 /* h-safe stuff (accounts for header) */
 
-html[data-header="true"] {
+#dataroot[data-header="true"] {
   --layout-offset: var(--header-height);
 }
 

@@ -1,5 +1,6 @@
 ---
-title: "about page"
+# this metadata is simply to prevent compilation errors
+title: "About HackGwinnett"
 authors: ["hg"]
 date: 1781016713527
 unlisted: true

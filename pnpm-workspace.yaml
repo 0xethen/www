@@ -1,27 +1,12 @@
 allowBuilds:
   esbuild: true
-  lightningcss: true
-  msw: true
-
-overrides:
-  "vite": "catalog:"
-  "@tanstack/react-store": "latest"
-
-"peerDependencyRules":
-  "allowAny":
-    - "vite"
-
-  "allowedVersions":
-    "vite": "*"
-
-packages:
-  - packages/*
-
-minimumReleaseAgeStrict: true
-
 catalog:
   vite: npm:@voidzero-dev/vite-plus-core@0.2.4
   vite-plus: 0.2.4
-
-minimumReleaseAgeExclude:
-  - nitro-nightly@3.0.1-20260711-104304-a2eb28ab
+overrides:
+  vite: "catalog:"
+peerDependencyRules:
+  allowAny:
+    - vite
+  allowedVersions:
+    vite: "*"

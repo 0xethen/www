@@ -1,25 +1,30 @@
-import { defineConfig } from "vite-plus";
+import { defineConfig, lazyPlugins } from "vite-plus";
 import { devtools } from "@tanstack/devtools-vite";
-import { nitro } from "nitro/vite";
-
-import { tanstackStart } from "@tanstack/react-start/plugin/vite";
-
-import viteReact from "@vitejs/plugin-react";
-import tailwindcss from "@tailwindcss/vite";
 import contentCollections from "@content-collections/vite";
+import tailwindcss from "@tailwindcss/vite";
+import { tanstackRouter } from "@tanstack/router-plugin/vite";
+import react, { reactCompilerPreset } from "@vitejs/plugin-react";
+import babel from "@rolldown/plugin-babel";
 
-const config = defineConfig({
-  staged: {
-    "*": "vp check --fix",
-  },
+// https://vite.dev/config/
+export default defineConfig({
+  base: "/www/", // for github pages
+  staged: { "*": "vp check --fix" },
   fmt: {},
   lint: {
-    jsPlugins: [{ name: "vite-plus", specifier: "vite-plus/oxlint-plugin" }],
+    plugins: ["react", "typescript", "oxc"],
     rules: {
+      "react/rules-of-hooks": "error",
+      "react/only-export-components": [
+        "warn",
+        {
+          allowConstantExport: true,
+        },
+      ],
       "vite-plus/prefer-vite-plus-imports": "error",
       "no-restricted-imports": [
         "warn",
-        // no content-collections imports (cms/ only)
+        // no content-collections imports (allowlist: cms/ only)
         {
           paths: [
             {
@@ -31,20 +36,24 @@ const config = defineConfig({
       ],
     },
     options: { typeAware: true, typeCheck: true },
+    jsPlugins: [
+      {
+        name: "vite-plus",
+        specifier: "vite-plus/oxlint-plugin",
+      },
+    ],
   },
   resolve: { tsconfigPaths: true },
-  plugins: [
+  plugins: lazyPlugins(() => [
     devtools(),
-    nitro({ static: true, rolldownConfig: { external: [/^@sentry\//] } }),
     contentCollections(),
     tailwindcss(),
-    tanstackStart({
-      spa: { enabled: true, prerender: { outputPath: "/index.html", crawlLinks: true } },
-      prerender: { failOnError: false },
+    tanstackRouter({
+      target: "react",
+      autoCodeSplitting: true,
     }),
-    viteReact(),
-  ],
-  build: { outDir: "dist" },
+    react(),
+    babel({ presets: [reactCompilerPreset()] }),
+  ]),
+  build: { rolldownOptions: { output: { codeSplitting: true } }, outDir: "dist" },
 });
-
-export default config;

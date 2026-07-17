@@ -13,12 +13,13 @@
     "oxfmt": {
       "initialization_options": {
         "settings": {
-          "configPath": "./vite.config.ts",
+          "fmt.configPath": "./vite.config.ts",
           "run": "onSave"
         }
       }
     }
   },
+  "read_only_files": ["**/routeTree.gen.ts"],
   "languages": {
     "CSS": {
       "format_on_save": "on",

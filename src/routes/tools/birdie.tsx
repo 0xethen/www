@@ -5,5 +5,5 @@ export const Route = createFileRoute("/tools/birdie")({
 });
 
 function RouteComponent() {
-  return <div>Hello "/tools/birdie"!</div>;
+  return <div>Coming soon...</div>;
 }
