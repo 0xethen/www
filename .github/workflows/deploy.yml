@@ -13,16 +13,11 @@ jobs:
           node-version: "24"
           cache: true
 
-      - name: Run vp for 3 seconds
-        shell: bash
-        run: |
-          vp run
-
       - name: install deps
         run: vp install
 
       - name: build
-        run: vp run build
+        run: vp build
 
       - name: create 404.html
         run: cp dist/index.html dist/404.html
