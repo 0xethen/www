@@ -136,7 +136,7 @@ function RouteComponent() {
             <div className="flex flex-col gap-2 lg:items-end">
               {/* TODO: image carousel here yay HG!!! */}
               HackGwinnett images
-              <HackathonFAQ responsiveText={false} />
+              {id === "hackathon" && <HackathonFAQ responsiveText={false} />}
             </div>
           </div>
         </div>

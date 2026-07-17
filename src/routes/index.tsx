@@ -74,8 +74,6 @@ function RouteComponent() {
         detached
       />
 
-      <div className="bg-blue-500 "></div>
-
       <div className="relative min-h-[85dvh] md:min-h-safe-dvh bg-hg-black bg-[url('/assets/images/hero/bgtexture01.svg')] text-white">
         <div className="min-h-[85dvh] md:min-h-safe-dvh px-8 md:px-12 flex flex-row items-center justify-between gap-12 animate-in fade-in slide-in-from-bottom-5 animation-duration-800 animation-delay-50 fill-mode-backwards">
           <div className="flex flex-col justify-center gap-4">
