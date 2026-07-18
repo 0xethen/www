@@ -6,6 +6,8 @@ export const goRedirects: Record<string, string> = {
   report: "/eda/report",
   instagram: brandInfo.socials.instagram || "/",
   discord: brandInfo.socials.discord || "/",
+
+  summerworkshops26: "/posts/summer-workshops-with-peach-state-2026",
 };
 
 // FOR THE RECORD, I opened #7141 in TanStack/router TWO MONTHS AGO

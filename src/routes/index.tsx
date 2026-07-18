@@ -81,7 +81,7 @@ function RouteComponent() {
               render={
                 <Link
                   to="/posts/$postId"
-                  params={{ postId: "peach-state-hacks-partnered-workshops" }}
+                  params={{ postId: "summer-workshops-with-peach-state-2026" }}
                   unstyled
                 />
               }
