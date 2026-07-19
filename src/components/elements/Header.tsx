@@ -159,8 +159,9 @@ export function Header({
         )}
       >
         <span className={cn("flex flex-1 justify-start", classNames?.logo)}>
-          <Link to="/" title="HackGwinnett Logo" className="text-xl font-brand font-bold" unstyled>
-            [HG]
+          <Link to="/" title="HackGwinnett Logo" className="text-xl font-mono font-bold" unstyled>
+            {isMobile ? "[HG]" : "HackGwinnett"}
+            {/*<img className="size-9" alt="HackGwinnett Logo" src="/www/assets/hg-offcenter.png" />*/}
           </Link>
           {import.meta.env.DEV && <Link to="/developer">++</Link>}
         </span>
