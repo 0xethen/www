@@ -23,6 +23,8 @@ import {
 import { addToCalendar } from "./-shared";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 
+// maybe make a component instead of param checking because this can get pretty annoying fast (esp. for people new to the codebase)
+
 export const Route = createFileRoute("/programs/$program")({
   loader: ({ params }) => {
     switch (params.program) {
