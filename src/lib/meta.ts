@@ -19,6 +19,13 @@ export interface HGEvent {
   };
   startDate: Date;
   endDate: Date;
+  registration?: {
+    // if the event is far into the future, do not include registration
+    // if the event date is close but registration deadline has passed, set closed to true
+    // otherwise, set closed to false
+    closed?: boolean;
+    url: string;
+  };
 }
 
 // todo: better descriptions?
@@ -36,6 +43,10 @@ export const eventInfo: Record<string, HGEvent> = {
     },
     startDate: new Date("2026-10-24T09:00:00"),
     endDate: new Date("2026-10-24T17:00:00"),
+    registration: {
+      url: "/go/register",
+      closed: true,
+    },
   },
   hackfest: {
     name: "HackFest IV",

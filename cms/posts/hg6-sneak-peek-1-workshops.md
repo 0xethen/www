@@ -3,6 +3,7 @@ title: "HackGwinnett 6.0 Sneak Peek #1"
 authors: ["ethen"]
 date: 1781016713527
 tags: ["hackathon", "hg6-sneak-peek"]
+hidden: true
 ---
 
 Hello, world! Ethen here >:)

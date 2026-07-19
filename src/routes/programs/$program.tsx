@@ -21,6 +21,7 @@ import {
   RiTimeLine,
 } from "@remixicon/react";
 import { addToCalendar } from "./-shared";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 
 export const Route = createFileRoute("/programs/$program")({
   loader: ({ params }) => {
@@ -53,6 +54,14 @@ function RouteComponent() {
         <div className="p-6 md:p-9 mx-auto max-w-7xl">
           <div className="grid lg:grid-cols-2 gap-10">
             <div className="flex flex-col gap-6">
+              {event.registration?.closed && (
+                <Alert>
+                  <AlertTitle>Registrations closed</AlertTitle>
+                  <AlertDescription>
+                    Sign-ups for {event.name} are closed at this time.
+                  </AlertDescription>
+                </Alert>
+              )}
               <div className="space-y-2">
                 <h1 className="font-semibold text-4xl">{event.name}</h1>
                 <p>{event.description}</p>

@@ -75,8 +75,8 @@ function RouteComponent() {
       />
 
       <div className="relative min-h-[85dvh] md:min-h-safe-dvh bg-hg-black bg-[url('/assets/images/hero/bgtexture01.svg')] text-white">
-        <div className="min-h-[85dvh] md:min-h-safe-dvh px-8 md:px-12 flex flex-row items-center justify-between gap-12 animate-in fade-in slide-in-from-bottom-5 animation-duration-800 animation-delay-50 fill-mode-backwards">
-          <div className="flex flex-col justify-center gap-4">
+        <div className="min-h-[85dvh] md:min-h-safe-dvh px-6 sm:px-8 md:px-12 flex flex-row items-center justify-between gap-12 animate-in fade-in slide-in-from-bottom-5 animation-duration-800 animation-delay-50 fill-mode-backwards">
+          <div className="flex flex-col justify-center gap-4 max-w-md sm:max-w-full">
             <ColorBadge
               render={
                 <Link
@@ -110,17 +110,19 @@ function RouteComponent() {
               )}
             </p>
             <div className="flex flex-row gap-4">
-              <Magnetic intensity={0.4}>
-                <Button
-                  render={<Link to="/go/$slug" params={{ slug: "register" }} unstyled />}
-                  className="cursor-none striped-hg-green hover:not-active:scale-102"
-                  variant="hero"
-                  size={isMobile ? "sm" : "lg"}
-                  nativeButton={false}
-                >
-                  Register
-                </Button>
-              </Magnetic>
+              {!eventInfo.hackathon.registration?.closed && (
+                <Magnetic intensity={0.4}>
+                  <Button
+                    render={<Link to="/go/$slug" params={{ slug: "register" }} unstyled />}
+                    className="cursor-none striped-hg-green hover:not-active:scale-102"
+                    variant="hero"
+                    size={isMobile ? "sm" : "lg"}
+                    nativeButton={false}
+                  >
+                    Register
+                  </Button>
+                </Magnetic>
+              )}
               <Magnetic intensity={0.4}>
                 <Button
                   render={
@@ -222,7 +224,7 @@ function RouteComponent() {
         >
           <h1 className="text-2xl sm:text-3xl md:text-4xl">Sponsors</h1>
 
-          <div className="space-y-4">
+          <div className="space-y-6">
             <SponsorLogo classNames={{ parent: "w-auto", image: "w-70" }} sponsor={statefarm} />
 
             {showGrid ? (
@@ -295,7 +297,7 @@ const SponsorLogo = ({
       src={`/www/assets/images/sponsors/${sponsor.src}`}
       alt={sponsor.title}
       className={cn(
-        "max-h-12 max-w-full object-contain transition grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-100 group-focus-visible:grayscale-0 group-focus-visible:opacity-100 select-none",
+        "max-h-12 max-w-full object-contain transition sm:grayscale sm:opacity-40 group-hover:grayscale-0 group-hover:opacity-100 group-focus-visible:grayscale-0 group-focus-visible:opacity-100 select-none",
         classNames?.image,
       )}
     />
